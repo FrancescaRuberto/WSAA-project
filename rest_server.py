@@ -1,4 +1,5 @@
 from flask import Flask, url_for, request, redirect, abort
+from anime.py import getall, find_by_id, create, update, delete
 
 # Create Flask app
 app = Flask(__name__, static_url_path='', static_folder='staticpages')
