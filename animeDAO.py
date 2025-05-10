@@ -1,0 +1,80 @@
+# animeDAO.py final version
+
+import mysql.connector
+
+class animeDAO:
+    host = ""
+    user = ""
+    password = ""
+    database = ""
+    connection = ""
+    cursor = ""
+    
+def __init__(self):
+    self.host = "localhost"
+    self.user = "root"
+    self.password = "prova123"
+    self.database = "anime_db"
+
+def getCursor(self):
+    self.connection = mysql.connector.connect(
+        host = self.host,
+        user = self.user,
+        password = self.password,
+        database = self.database
+    )
+    self.curos = self.connection.cursor(dictionary=True)
+    return self.curson
+
+def closeAll(self):
+    self.connection.close()
+    self.cursor.close()
+
+    def getAll(self):
+        cursor = self.getCursor()
+        sql = "SELECT * FROM anime"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        self.closeAll()
+        return result
+
+    def findByID(self, id):
+        cursor = self.getCursor()
+        sql = "SELECT * FROM anime WHERE id = %s"
+        values = (id,)
+        cursor.execute(sql, values)
+        result = cursor.fetchone()
+        self.closeAll()
+        return result
+
+    def create(self, values):
+        cursor = self.getCursor()
+        sql = """INSERT INTO anime 
+                (title, author, is_manga, release_year, seasons, episodes, 
+                 studio, rating, genre, category, original_language) 
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+        cursor.execute(sql, values)
+        self.connection.commit()
+        newid = cursor.lastrowid
+        self.closeAll()
+        return newid
+
+    def update(self, values):
+        cursor = self.getCursor()
+        sql = """UPDATE anime SET 
+                title=%s, author=%s, is_manga=%s, release_year=%s, seasons=%s, 
+                episodes=%s, studio=%s, rating=%s, genre=%s, category=%s, original_language=%s 
+                WHERE id=%s"""
+        cursor.execute(sql, values)
+        self.connection.commit()
+        self.closeAll()
+
+    def delete(self, id):
+        cursor = self.getCursor()
+        sql = "DELETE FROM anime WHERE id = %s"
+        values = (id,)
+        cursor.execute(sql, values)
+        self.connection.commit()
+        self.closeAll()
+
+animeDAO = AnimeDAO()

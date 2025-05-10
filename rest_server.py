@@ -1,5 +1,5 @@
 from flask import Flask, url_for, request, redirect, abort
-from anime.py import getall, find_by_id, create, update, delete
+from animeDAO import animeDAO
 
 # Create Flask app
 app = Flask(__name__, static_url_path='', static_folder='staticpages')
@@ -9,8 +9,8 @@ app = Flask(__name__, static_url_path='', static_folder='staticpages')
 def index():
     return "Wecolme to the Anime API"
 
-# GET - to get all
-@app.route('/anime/', methods=['GET'])
+# GET - to get all anime
+@app.route('/anime/<int:id>', methods=['GET'])
 def get_all_anime():
     return f"get all anime"
 
