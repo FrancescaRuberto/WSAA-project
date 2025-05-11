@@ -1,34 +1,46 @@
-# animeDAO.py final version
+#AnimeDao final version
 
 import mysql.connector
 
-class animeDAO:
+class AnimeDAO:
     host = ""
     user = ""
     password = ""
     database = ""
     connection = ""
     cursor = ""
-    
-def __init__(self):
-    self.host = "localhost"
-    self.user = "root"
-    self.password = "prova123"
-    self.database = "anime_db"
 
-def getCursor(self):
-    self.connection = mysql.connector.connect(
-        host = self.host,
-        user = self.user,
-        password = self.password,
-        database = self.database
-    )
-    self.curos = self.connection.cursor(dictionary=True)
-    return self.curson
+    def __init__(self):
+        self.host = "localhost"
+        self.user = "root00"
+        self.password = "root00"
+        self.database = "anime_db"
 
-def closeAll(self):
-    self.connection.close()
-    self.cursor.close()
+    def getCursor(self):
+        self.connection = mysql.connector.connect(
+            host=self.host,
+            user=self.user,
+            password=self.password,
+            database=self.database
+        )
+        self.cursor = self.connection.cursor(dictionary=True)
+        return self.cursor
+
+    def closeAll(self):
+        self.connection.close()
+        self.cursor.close()
+
+    def create(self, values):
+        cursor = self.getCursor()
+        sql = """INSERT INTO anime 
+                (title, author, is_manga, release_year, seasons, episodes, 
+                 studio, rating, genre, category, original_language) 
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+        cursor.execute(sql, values)
+        self.connection.commit()
+        newid = cursor.lastrowid
+        self.closeAll()
+        return newid
 
     def getAll(self):
         cursor = self.getCursor()
@@ -46,18 +58,6 @@ def closeAll(self):
         result = cursor.fetchone()
         self.closeAll()
         return result
-
-    def create(self, values):
-        cursor = self.getCursor()
-        sql = """INSERT INTO anime 
-                (title, author, is_manga, release_year, seasons, episodes, 
-                 studio, rating, genre, category, original_language) 
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
-        cursor.execute(sql, values)
-        self.connection.commit()
-        newid = cursor.lastrowid
-        self.closeAll()
-        return newid
 
     def update(self, values):
         cursor = self.getCursor()
