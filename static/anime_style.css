@@ -1,0 +1,135 @@
+/* General body styles */
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero image section */
+#hero-image {
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/images6/Manga-HD-Wallpaper-Computer-620x392.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain; /* Preserves image proportions */
+    height: 300px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Title styles */
+h1 {
+    color: white;
+    font-family: 'Bangers', cursive; /* Manga-style font */
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+/* Description text */
+p.lead {
+    color: #d1d1d1;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Dropdown menu */
+#actionSelect {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Form container styling */
+.form-container {
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Sections hidden by default */
+.section {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Button styling */
+button.btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+button.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+}
+
+button.btn-warning {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+}
+
+button.btn-success {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+}
+
+button.btn-info {
+    background-color: #3498db;
+    color: white;
+    border: none;
+}
+
+/* Input and select fields */
+input.form-control,
+select.form-select {
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Labels */
+.form-label {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Checkbox and label */
+.form-check-label {
+    color: white;
+    font-size: 1rem;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+/* Section headings */
+h3 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Anime list display area */
+#animeList {
+    margin-top: 20px;
+}
