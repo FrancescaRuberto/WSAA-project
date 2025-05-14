@@ -133,3 +133,30 @@ h3 {
 #animeList {
     margin-top: 20px;
 }
+
+/* Table styling */
+#animeList table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #222;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#animeList th, #animeList td {
+    padding: 12px 15px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+#animeList thead {
+    background-color: #444;
+    font-weight: bold;
+}
+
+#animeList tr:hover {
+    background-color: #333;
+}
+
