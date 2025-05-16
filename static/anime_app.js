@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // UPDATE ANIME (PUT)
+        // UPDATE ANIME (PUT)
     // <--- Search anime to edit --->
     document.getElementById("searchFormEdit").addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -121,7 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
         
         try {
             const response = await fetch(`/anime/${id}`);
-            if (!response.ok) throw new Error("Anime not found");
+            if (!response.ok) {
+                const errorData = await response.json();  // Aggiunto per leggere il messaggio d'errore dal backend
+                throw new Error(errorData.message || "Anime not found");
+            }
             
             const anime = await response.json();
             populateEditForm(anime);
@@ -146,14 +149,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify(animeData)
             });
             
-            if (!response.ok) throw new Error("Update failed");
+            const result = await response.json();  // Read Json response
+            
+            if (!response.ok) {
+                throw new Error(result.message || result.error || "Update failed");  // Edited to use message in the beckend
+            }
+            
             alert("Anime updated successfully");
             document.getElementById("updateAnimeForm").style.display = "none";
             document.getElementById("searchFormEdit").reset();
             getAllAnime();
         } catch (error) {
             console.error("Error:", error);
-            alert(error.message);
+            document.getElementById("editResult").innerHTML = `  
+                <div class="alert alert-danger mt-3">${error.message}</div>`;
         }
     });
 
@@ -166,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'author': anime.author,
             'release_year': anime.release_year,
             'studio': anime.studio,
-            'is_manga': anime.is_manga === "Yes",
+            'is_manga': anime.is_manga === "Yes" || anime.is_manga === true,  // Added fix to control true
             'rating': anime.rating,
             'genre': anime.genre,
             'category': anime.category,
@@ -185,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = {};
         
         form.querySelectorAll("input, select").forEach(element => {
-            if (element.name) {
+            if (element.name && element.name !== 'id') {  // Added fix to exclude id
                 formData[element.name] = element.type === "checkbox" 
                     ? (element.checked ? "Yes" : "No")
                     : element.value;

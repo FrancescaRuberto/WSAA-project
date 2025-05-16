@@ -1,4 +1,4 @@
-#AnimeDao final version
+# AnimeDao final version
 
 import mysql.connector
 
@@ -59,7 +59,7 @@ class AnimeDAO:
         self.closeAll()
         return result
 
-    def update(self, values):
+    def update(self, values):  # QUESTA LINEA DEVE ESSERE INDENTATA COME GLI ALTRI METODI
         cursor = self.getCursor()
         sql = """UPDATE anime SET 
                 title=%s, author=%s, is_manga=%s, release_year=%s, seasons=%s, 
@@ -67,7 +67,17 @@ class AnimeDAO:
                 WHERE id=%s"""
         cursor.execute(sql, values)
         self.connection.commit()
+        
+        # Verify if something has been updated
+        if cursor.rowcount == 0:
+            return None
+
+        # Give back updated data
+        get_sql = "SELECT * FROM anime WHERE id=%s"
+        cursor.execute(get_sql, (values[-1],))  # values[-1] è l'ID
+        result = cursor.fetchone()
         self.closeAll()
+        return result
 
     def delete(self, id):
         cursor = self.getCursor()

@@ -58,9 +58,8 @@ def create_anime():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# PUT - Update anime
-@app.route('/anime', methods=['PUT'])
-def update_anime():
+@app.route('/anime/<int:id>', methods=['PUT'])  # Nota il <int:id> nell'URL
+def update_anime(id):
     try:
         data = request.get_json()
         values = (
@@ -75,10 +74,9 @@ def update_anime():
             data.get('genre'),
             data.get('category'),
             data.get('original_language'),
-            data.get('id')
+            id
         )
         
-        # Update the anime using the DAO and check if the update was successful
         updated_anime = animeDAO.update(values)
         if updated_anime:
             return jsonify(updated_anime)
