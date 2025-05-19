@@ -12,7 +12,7 @@ class AnimeDAO:
 
     def __init__(self):
         self.host = "fraruberto.mysql.pythonanywhere-services.com"
-        self.user = "fratuberto"
+        self.user = "fraruberto"
         self.password = "Provaprova.216"
         self.database = "fraruberto$anime_database"
 
@@ -59,22 +59,23 @@ class AnimeDAO:
         self.closeAll()
         return result
 
-    def update(self, values):  # QUESTA LINEA DEVE ESSERE INDENTATA COME GLI ALTRI METODI
+    def update(self, values):
         cursor = self.getCursor()
         sql = """UPDATE anime SET 
-                title=%s, author=%s, is_manga=%s, release_year=%s, seasons=%s, 
-                episodes=%s, studio=%s, rating=%s, genre=%s, category=%s, original_language=%s 
-                WHERE id=%s"""
+            title=%s, author=%s, is_manga=%s, release_year=%s, seasons=%s, 
+            episodes=%s, studio=%s, rating=%s, genre=%s, category=%s, original_language=%s 
+            WHERE id=%s"""
         cursor.execute(sql, values)
         self.connection.commit()
         
         # Verify if something has been updated
         if cursor.rowcount == 0:
+            self.closeAll()
             return None
 
         # Give back updated data
         get_sql = "SELECT * FROM anime WHERE id=%s"
-        cursor.execute(get_sql, (values[-1],))  # values[-1] è l'ID
+        cursor.execute(get_sql, (values[-1],))  # values[-1] is ID
         result = cursor.fetchone()
         self.closeAll()
         return result
