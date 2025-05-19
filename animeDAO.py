@@ -11,10 +11,10 @@ class AnimeDAO:
     cursor = ""
 
     def __init__(self):
-        self.host = "localhost"
-        self.user = "root00"
-        self.password = "root00"
-        self.database = "anime_db"
+        self.host = "fraruberto.mysql.pythonanywhere-services.com"
+        self.user = "fratuberto"
+        self.password = "Provaprova.216"
+        self.database = "fraruberto$anime_database"
 
     def getCursor(self):
         self.connection = mysql.connector.connect(
