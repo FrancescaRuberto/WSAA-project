@@ -44,7 +44,7 @@ The backend of the application is built using **Python** and the **Flask** micro
 5. **App Structure**  
    To maintain a clean and modular architecture, the project was organized as follows:
 
-<pre lang="markdown"> ``` anime-database-manager/ ├── anime_server.py # Main Flask application with route definitions ├── animeDAO.py # Data Access Object (DAO) for database operations ├── requirements.txt # Python dependencies for the backend ├── static/ # Folder for all static frontend assets │ ├── anime_style.css # Custom CSS stylesheets │ └── anime_app.js # JavaScript scripts for frontend logic ├── templates/ # HTML templates rendered via Flask │ └── anime_page.html # Main user interface └── README.md # Project documentation ``` </pre>
+<pre> ``` anime-database-manager/ ├── anime_server.py # Main Flask application with route definitions ├── animeDAO.py # Data Access Object (DAO) for database operations ├── requirements.txt # Python dependencies for the backend ├── static/ # Folder for all static frontend assets │ ├── anime_style.css # Custom CSS stylesheets │ └── anime_app.js # JavaScript scripts for frontend logic ├── templates/ # HTML templates rendered via Flask │ └── anime_page.html # Main user interface └── README.md # Project documentation ``` </pre>
 
 This structure helped me keep the beckend logic, database internations, and fron-end implementation well organised. It made the project easier to update and build on.
 
