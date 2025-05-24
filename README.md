@@ -117,3 +117,36 @@ The web application homepage provides a user-friendly interface to mange the ani
   This option allows users to delete an existing anime by specifying its ID, removing it from the database permanently.
 
 Throughout the site, user actions provide immediate feedback, including success confirmations or error messages, ensuring a smooth and interactive experience.
+
+
+## Resources
+
+- A Complete Guide to Flexbox. CSS-Tricks. https://css-tricks.com/snippets/css/a-guide-to-flexbox/  
+- Can I Use – Browser Compatibility Tables. https://caniuse.com/  
+- CodePen – Frontend Playground & Examples. https://codepen.io/  
+- CSS Layout Techniques. MDN Web Docs. https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout  
+- CSS Reference. Codrops. https://tympanus.net/codrops/css_reference/  
+- CSS-Tricks. https://css-tricks.com/  
+- CSS Variables Guide. MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties  
+- DevDocs – Combined API Documentation. https://devdocs.io/  
+- Eloquent JavaScript (3rd ed.). Haverbeke, M. (2018). https://eloquentjavascript.net/  
+- Flexbox Guide. CSS-Tricks. https://css-tricks.com/snippets/css/a-guide-to-flexbox/  
+- FreeCodeCamp – JavaScript Algorithms and Data Structures Certification. https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/  
+- FreeCodeCamp – Responsive Web Design Certification. https://www.freecodecamp.org/learn/responsive-web-design/  
+- Frontend Mentor – Real-world Frontend Challenges. https://www.frontendmentor.io/  
+- Google Developers – Web Fundamentals. https://developers.google.com/web/fundamentals  
+- HTML Living Standard. WHATWG. https://html.spec.whatwg.org/multipage/  
+- JavaScript.info. https://javascript.info/  
+- JavaScript MDN Reference – Methods & Properties. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference  
+- MDN Web Docs – CSS. https://developer.mozilla.org/en-US/docs/Web/CSS  
+- MDN Web Docs – HTML. https://developer.mozilla.org/en-US/docs/Web/HTML  
+- MDN Web Docs – JavaScript. https://developer.mozilla.org/en-US/docs/Web/JavaScript  
+- Smashing Magazine – Frontend Design & Development. https://www.smashingmagazine.com/category/front-end/  
+- Stack Overflow – CSS Tag. https://stackoverflow.com/questions/tagged/css  
+- Stack Overflow – Frontend Development Tag. https://stackoverflow.com/questions/tagged/frontend  
+- Stack Overflow – JavaScript Tag. https://stackoverflow.com/questions/tagged/javascript  
+- Stack Overflow Documentation (archived). https://stackoverflow.com/documentation  
+- W3Schools – CSS Tutorial. https://www.w3schools.com/css/  
+- W3Schools – HTML Tutorial. https://www.w3schools.com/html/  
+- W3Schools – JavaScript Tutorial. https://www.w3schools.com/js/  
+- You Don’t Know JS (book series). Kyle Simpson. https://github.com/getify/You-Dont-Know-JS  
