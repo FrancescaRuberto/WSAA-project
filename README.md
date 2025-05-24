@@ -22,10 +22,10 @@ The application allows users to:
 - **Edit** an existing anime by searching for it via ID and updating its details  
 - **Delete** anime entries from the database when no longer needed
 
-## ⚙️ Development Methodology & Technical Implementation
+## Development Methodology & Technical Implementation
 The development of this web application was carried out as part of the *Web Services and Applications* course. The implementation closely followed the course labs for guidance and structure, while also incorporating independent work, external documentation, and AI support where needed.
 
-### 🧩 Backend Development
+### Backend Development
 
 The backend of the application is built using **Python** and the **Flask** microframework, following a RESTful architecture to expose the database operations via HTTP endpoints.
 
@@ -61,3 +61,39 @@ This structure helped me keep the beckend logic, database internations, and fron
    To ensure public accessibility and ease of demonstration, the final version of the backend (along with the frontend) was deployed to PythonAnywhere.
 
 ---
+
+### Frontend Development
+
+The frontend was designed to give users a simple and clear way to interact with the anime database. It connects smoothly with the Flask backend API and lets users view, add, update, and delete anime entries easily.
+
+#### 1. Project Structure  
+To keep things organized, the frontend code is divided into folders:  
+- `templates/` contains the HTML files rendered by Flask  
+- `static/` holds all the static files like CSS and JavaScript 
+
+This separation makes the code easier to maintain and update.
+
+#### 2. HTML and CSS  
+The HTML was based on examples from the course labs, with additional adjustments to improve layout and usability. It uses clean and semantic tags to organize the page content well.  
+The CSS was written to make the website look clean and organized. The layout adjusts well to different screen sizes, so the site is easy to use both on desktops and on mobile devices. Colors, fonts, and spacing were carefully chosen to make the interface easy to read and visually pleasant.
+
+#### 3. JavaScript and API Communication  
+JavaScript handles dynamic actions on the page, such as:  
+- Fetching data from the Flask API and showing it without reloading the page  
+- Sending form data to create or update anime entries via API calls  
+- Updating the page instantly after each operation to give users real-time feedback  
+
+While working on the JavaScript, especially for the update (PUT) functionality, I used AI tools to help write and debug some tricky parts. At first, I had trouble properly connecting the update feature to the backend, so it didn’t work correctly. Using AI assistance helped me fix those issues and get the update process running smoothly.
+
+#### 4. User Experience  
+The frontend gives clear feedback to users after every action:  
+- Showing updated data right away  
+- Displaying success or error messages  
+- Preventing multiple submissions during loading  
+
+This makes the app easy and reliable to use.
+
+Thanks to this clear structure and responsive design, the frontend offers a friendly and effective way to manage the anime database.
+
+---
+
