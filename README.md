@@ -97,3 +97,23 @@ Thanks to this clear structure and responsive design, the frontend offers a frie
 
 ---
 
+### Website Overview
+
+The web application homepage provides a user-friendly interface to mange the anime database. Here's what you you do and find in the page:
+
+- **View All Anime** 
+  By clicking on this option, all anime currently stored in the database are shown in a clear, tabular format including all details like author, release year, genre, rating, and so forth.
+
+- **Search by ID** 
+  This option allow the user to search for a specific anime by entering its ID in the search box. This retrieves all the details of the chosen anime and diplays them on the page.
+
+- **Add New Anime**
+  This option allow the use to add a new anime to the database by filling out a form with all relevant details (title, author, genre, etc.). Submitting the form sends the data to the backend to create a new record in the database.
+
+- **Edit Existing Anime** 
+  After having searched the anime by ID, the user can use this option to edit the detials of an anime already existing in the database. The user can update its details using the edit form. The changes are sent to the backend to update the database accordingly.
+
+- **Delete Anime**
+  This option allows users to delete an existing anime by specifying its ID, removing it from the database permanently.
+
+Throughout the site, user actions provide immediate feedback, including success confirmations or error messages, ensuring a smooth and interactive experience.
