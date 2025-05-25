@@ -50,7 +50,7 @@ def create_anime():
             data.get('rating'),
             data.get('genre'),
             data.get('category'),
-            data.get('original_language', 'Japanese')
+            data.get('original_language')
         )
         
         new_id = animeDAO.create(values)
