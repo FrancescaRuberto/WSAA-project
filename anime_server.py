@@ -63,14 +63,6 @@ def create_anime():
 def update_anime(id):
     try:
         data = request.get_json()
-
-        # Forcing management for "is manga"  
-        is_manga = data.get('is_manga')
-        if isinstance(is_manga, str):
-            is_manga = is_manga.lower() == 'true'
-        elif is_manga is None:
-            is_manga = False
-
         values = (
             data.get('title'),
             data.get('author'),
