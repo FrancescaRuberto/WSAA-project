@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch(`/anime/${id}`);
             if (!response.ok) {
-                const errorData = await response.json();  // Aggiunto per leggere il messaggio d'errore dal backend
+                const errorData = await response.json();
                 throw new Error(errorData.message || "Anime not found");
             }
             
@@ -175,6 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
             'author': anime.author,
             'release_year': anime.release_year,
             'studio': anime.studio,
+            'seasons': anime.seasons,
+            'episodes': anime.episodes,
             'is_manga': anime.is_manga === "Yes" || anime.is_manga === true,  // Added fix to control true
             'rating': anime.rating,
             'genre': anime.genre,

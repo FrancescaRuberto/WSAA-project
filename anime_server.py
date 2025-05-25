@@ -58,7 +58,8 @@ def create_anime():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@app.route('/anime/<int:id>', methods=['PUT'])  # Nota il <int:id> nell'URL
+# PUT - Update anime
+@app.route('/anime/<int:id>', methods=['PUT']) 
 def update_anime(id):
     try:
         data = request.get_json()
