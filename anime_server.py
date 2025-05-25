@@ -63,10 +63,14 @@ def create_anime():
 def update_anime(id):
     try:
         data = request.get_json()
+
+        is_manga_str = data.get('is_manga')
+        is_manga = True if is_manga_str == "Yes" else False
+
         values = (
             data.get('title'),
             data.get('author'),
-            data.get('is_manga'),
+            is_manga,
             data.get('release_year'),
             data.get('seasons'),
             data.get('episodes'),
