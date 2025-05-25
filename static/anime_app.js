@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'studio': anime.studio,
             'seasons': anime.seasons,
             'episodes': anime.episodes,
-            'is_manga': anime.is_manga === "Yes" || anime.is_manga === true,  // Added fix to control true
+            'is_manga': anime.is_manga: Boolean(anime.is_manga)// Added fix to control correct response
             'rating': anime.rating,
             'genre': anime.genre,
             'category': anime.category,
@@ -191,21 +191,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function getAnimeFromForm(formId) {
-        const form = document.getElementById(formId);
-        const formData = {};
-        
-        form.querySelectorAll("input, select").forEach(element => {
-            if (element.name && element.name !== 'id') {  // Added fix to exclude id
-                formData[element.name] = element.type === "checkbox" 
-                    ? (element.checked ? "Yes" : "No")
-                    : element.value;
-            }
-        });
-        return formData;
-    }
-});
-
+function getAnimeFromForm(formId) {
+    const form = document.getElementById(formId);
+    const formData = {};
+    
+    form.querySelectorAll("input, select").forEach(element => {
+        if (element.name && element.name !== 'id') {
+            formData[element.name] = element.type === "checkbox"
+                ? element.checked  // ✅ ritorna true o false, non "Yes"/"No"
+                : element.value;
+        }
+    });
+    return formData;
+}
 // DELETE ANIME (DELETE)
     document.getElementById("deleteForm").addEventListener("submit", async (e) => {
         e.preventDefault();
